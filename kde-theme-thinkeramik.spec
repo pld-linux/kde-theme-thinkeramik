@@ -1,5 +1,5 @@
 
-%define         _name thinkeramik
+%define		_name	thinkeramik
 
 Summary:	KDE style - thinkeramik
 Summary(pl):	Styl do KDE - thinkeramik
