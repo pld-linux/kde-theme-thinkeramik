@@ -93,8 +93,6 @@ Jest podobna do dekoracji keramika z wyj±tkiem:
 %setup -q -n %{_name}-%{version}
 
 %build
-kde_htmldir="%{_kdedocdir}"; export kde_htmldir
-kde_icondir="%{_iconsdir}"; export kde_icondir
 export UNSERMAKE=/usr/share/unsermake/unsermake
 cp -f /usr/share/automake/config.sub admin
 %{__make} -f Makefile.cvs
@@ -108,7 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_htmldir="%{_kdedocdir}"
 
 %files -n kde-style-%{_name}
 %defattr(644,root,root,755)
