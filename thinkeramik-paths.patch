@@ -1,0 +1,47 @@
+--- thinkeramik-3.2.1/styleconf/thinkeramikconf.cpp.orig	2004-04-28 17:54:33.000000000 +0200
++++ thinkeramik-3.2.1/styleconf/thinkeramikconf.cpp	2004-05-27 20:39:43.872003096 +0200
+@@ -606,7 +606,7 @@
+ 
+     QLabel *schemeDmyLbl11 = new QLabel(i18n("\nScheme manager can also read the global scheme files."), scmGrp);
+     QLabel *schemeDmyLbl12 = new QLabel(i18n("\"Global scheme file\" means the scheme files stored in"), scmGrp);
+-    QLabel *schemeDmyLbl13 = new QLabel(i18n("   \"$KDEDIR/share/apps/kdisplay/styleconfs\" directory."), scmGrp);
++    QLabel *schemeDmyLbl13 = new QLabel(i18n("   \"/usr/share/apps/kdisplay/styleconfs\" directory."), scmGrp);
+     QLabel *schemeDmyLbl14 = new QLabel(i18n("The global file is ignored when the same name files exist"), scmGrp);
+     QLabel *schemeDmyLbl15 = new QLabel(i18n("   in both $HOME/.qt and the global directory."), scmGrp);
+ 
+@@ -686,7 +686,7 @@
+     QSettings settings;
+ 
+     if (globalScheme) {
+-          settings.insertSearchPath( QSettings::Unix, QString(getenv("KDEDIR")) + "/share/apps/kdisplay/styleconfs" );
++          settings.insertSearchPath( QSettings::Unix, QString("/usr/share/apps/kdisplay/styleconfs") );
+     }
+ 
+     QString mfgcolstr = settings.readEntry(searchPath + "/ThinKmk/MenuFG");
+@@ -1376,7 +1376,7 @@
+ 
+     QString schemeStr  = "/thinkeramik_" + schemeNameText + ".kcm";
+     QStringList schemeFile( (QString) (QDir::homeDirPath() + "/.qt" + schemeStr + "rc"));
+-    schemeFile << (QString) (QString(getenv("KDEDIR")) + "/share/apps/kdisplay/styleconfs" + schemeStr + "rc");
++    schemeFile << (QString) "/usr/share/apps/kdisplay/styleconfs" + schemeStr + "rc";
+     bool schemeExists = false;
+     for ( QStringList::Iterator it = schemeFile.begin(); it != schemeFile.end(); ++it ) {
+ 	if (QFile::exists(*it)) {
+@@ -1514,7 +1514,7 @@
+ {
+     schemeListBox->clear();
+     QStringList schemeDirs (QDir::homeDirPath() + "/.qt");
+-    schemeDirs << (QString) (QString(getenv("KDEDIR")) + "/share/apps/kdisplay/styleconfs");
++    schemeDirs << (QString) "/usr/share/apps/kdisplay/styleconfs";
+     for ( QStringList::Iterator it = schemeDirs.begin(); it != schemeDirs.end(); ++it ) {
+         QDir schemeDir(*it, "thinkeramik_*.kcmrc");
+ 	uint schemeCount = schemeDir.count();
+@@ -1525,7 +1525,7 @@
+ 	        schemeFile = schemeFile.right(fnameLen - 12);
+ 		schemeFile = schemeFile.left(fnameLen - 12 - 6);
+ 		if (!(schemeListBox->findItem(schemeFile))) {
+-		    if ( (*it).startsWith(QString(getenv("KDEDIR"))+ "/share/apps/kdisplay/styleconfs") ) {
++		    if ( (*it).startsWith(QString("/usr/share/apps/kdisplay/styleconfs")) ) {
+ 		        schemeFile = "(GLOBAL)" + schemeFile;
+ 		    }
+ 		    schemeListBox->insertItem(schemeFile);
