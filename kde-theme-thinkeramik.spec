@@ -3,13 +3,14 @@
 
 Summary:	KDE style - thinkeramik
 Summary(pl):	Styl do KDE - thinkeramik
-Name:		kde-style-%{_name}
+Name:		kde-theme-%{_name}
 Version:	3.1.4
 Release:	1
 License:	GPL
 Group:		Themes
 Source0:	http://prefsx1.hp.infoseek.co.jp/tk040415/%{_name}-%{version}.tar.gz
 # Source0-md5:	ef6317fbd729fa2d5612c7f764677237
+Patch0:         %{name}-global_cs.patch
 URL:		http://www.kde-look.org/content/show.php?content=10919
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -20,9 +21,17 @@ Requires:	kdelibs >= 3.1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kde-style-thin_keramik
 
-%description
-thinkeramik is modified from keramik as follows:
+%description 
+Blah.
 
+%package -n kde-style-%{_name}
+Summary:        KDE style - %{_name}
+Summary(pl):    Styl do KDE - %{_name}
+Group:          Themes
+Requires:       kdelibs
+
+%description -n kde-style-%{_name}
+thinkeramik is modified from keramik as follows:
 - Flat Menubar and Toolbar.
 - Scrollbar-slider color.(= Window-InactiveBackground)
 - Thin push-buttons and scrollbar.
@@ -32,7 +41,7 @@ thinkeramik is modified from keramik as follows:
 - Active tab effect.
 - Striped menu.
 
-%description -l pl
+%description -l pl -n kde-style-%{_name}
 thinkeramik to zmodyfikowany keramik z nastêpuj±cymi zmianami:
 - P³askie paski menu i narzêdzi
 - Inny kolor suwaka - nieakktywnego t³a
@@ -68,6 +77,7 @@ Styl dekoracji okien dla KDE - thinkeramik.
 
 %prep
 %setup -q -n %{_name}-%{version}
+%patch0 -p1
 cp /usr/share/automake/config.sub admin
 
 %build
@@ -86,7 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-%files
+%files -n kde-style-%{_name}
 %defattr(644,root,root,755)
 %{_libdir}/kde3/plugins/styles/*.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/*.so
