@@ -96,7 +96,8 @@ Jest podobna do dekoracji keramika z wyj±tkiem:
 export UNSERMAKE=/usr/share/unsermake/unsermake
 cp -f /usr/share/automake/config.sub admin
 %{__make} -f Makefile.cvs
-%configure
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %clean
