@@ -4,13 +4,12 @@
 Summary:	KDE style - thinkeramik
 Summary(pl):	Styl do KDE - thinkeramik
 Name:		kde-theme-%{_name}
-Version:	3.1.4
+Version:	3.2.1
 Release:	1
 License:	GPL
 Group:		Themes
-Source0:	http://prefsx1.hp.infoseek.co.jp/tk040415/%{_name}-%{version}.tar.gz
+Source0:	http://prefsx1.hp.infoseek.co.jp/tk040429/%{_name}-%{version}.tar.gz
 # Source0-md5:	ef6317fbd729fa2d5612c7f764677237
-Patch0:		%{name}-global_cs.patch
 URL:		http://www.kde-look.org/content/show.php?content=10919
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -61,10 +60,16 @@ Group:		Themes
 Requires:	kdelibs
 
 %description -n kde-colorscheme-%{_name}
-Color scheme for KDE style - thinkeramik.
+Color schemes for KDE style - thinkeramik. One of them
+has a subdued green look and the second is an interesting
+yet a little eccentric green/orange/blue mix.
+
 
 %description -n kde-colorscheme-%{_name} -l pl
-Schemat kolorów do stylu KDE - thinkeramik.
+Schematy kolorów do stylu KDE - thinkeramik. Jeden z nich
+ma stonowany, zielony wygl±d; a drugi jest interesuj±cym,
+acz trochê ekstrawaganckim po³±czeniem kolorów: 
+zielonego, pomarañczowego i niebieskiego.
 
 %package -n kde-decoration-%{_name}
 Summary:	Kwin decoration - thinkeramik
@@ -73,14 +78,19 @@ Group:		Themes
 Requires:	kdebase-desktop
 
 %description -n kde-decoration-%{_name}
-Window decoration style for KDE - thinkeramik.
+A window decoration which goes with the thinkeramik KDE style.
+It is similar to the keramik decoration, it differs by:
+- having flattened buttons
+- extended customizability (like the buttons' shape)
 
 %description -n kde-decoration-%{_name} -l pl
-Styl dekoracji okien dla KDE - thinkeramik.
+Dekoracja okien, która pasuje do stylu KDE - thinkeramika.
+Jest podobna do dekoracji keramika z wyj±tkiem:
+- sp³aszczonych przycisków
+- zwiêkszonej dostosowywalno¶ci (np. kszta³tu przycisków)
 
 %prep
 %setup -q -n %{_name}-%{version}
-%patch0 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
