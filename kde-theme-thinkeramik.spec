@@ -5,12 +5,13 @@ Summary:	KDE style - thinkeramik
 Summary(pl):	Styl do KDE - thinkeramik
 Name:		kde-theme-%{_name}
 Version:	3.2.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Themes
 Source0:	http://prefsx1.hp.infoseek.co.jp/tk040429/%{_name}-%{version}.tar.gz
 # Source0-md5:	a151cd6ccba9376fb884d716ff4c4512
 URL:		http://www.kde-look.org/content/show.php?content=10919
+Patch0:		%{_name}-paths.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	freetype-devel
@@ -91,6 +92,7 @@ Jest podobna do dekoracji keramika z wyj±tkiem:
 
 %prep
 %setup -q -n %{_name}-%{version}
+%patch0 -p1
 
 %build
 export UNSERMAKE=/usr/share/unsermake/unsermake
