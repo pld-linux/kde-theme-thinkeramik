@@ -47,7 +47,7 @@ thinkeramik is modified from keramik as follows:
 %description -n kde-style-%{_name} -l pl
 thinkeramik to zmodyfikowany keramik z nastêpuj±cymi zmianami:
 - P³askie paski menu i narzêdzi
-- Inny kolor suwaka - nieakktywnego t³a
+- Inny kolor suwaka - nieaktywnego t³a
 - Cienkie przyciski i suwak
 - Efekt dla zaznaczonej i aktywnej pozycji w pasku menu
 - Ikonki na zak³adkach
