@@ -10,13 +10,13 @@ License:	GPL
 Group:		Themes
 Source0:	http://prefsx1.hp.infoseek.co.jp/tk040415/%{_name}-%{version}.tar.gz
 # Source0-md5:	ef6317fbd729fa2d5612c7f764677237
-Patch0:         %{name}-global_cs.patch
+Patch0:		%{name}-global_cs.patch
 URL:		http://www.kde-look.org/content/show.php?content=10919
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	kdelibs-devel >= 3.1.2
-BuildRequires:  unsermake
+BuildRequires:	unsermake
 Requires:	kdelibs >= 3.1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kde-style-thin_keramik
@@ -28,10 +28,10 @@ thinkeramik is a KDE style based on Keramik.
 thinkeramik to styl KDE oparty na Keramiku.
 
 %package -n kde-style-%{_name}
-Summary:        KDE style - %{_name}
-Summary(pl):    Styl do KDE - %{_name}
-Group:          Themes
-Requires:       kdelibs
+Summary:	KDE style - %{_name}
+Summary(pl):	Styl do KDE - %{_name}
+Group:		Themes
+Requires:	kdelibs
 
 %description -n kde-style-%{_name}
 thinkeramik is modified from keramik as follows:
