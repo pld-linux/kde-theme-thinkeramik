@@ -22,7 +22,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kde-style-thin_keramik
 
 %description 
-Blah.
+thinkeramik is a KDE style based on Keramik.
+
+%description -l pl
+thinkeramik to styl KDE oparty na Keramiku.
 
 %package -n kde-style-%{_name}
 Summary:        KDE style - %{_name}
@@ -41,7 +44,7 @@ thinkeramik is modified from keramik as follows:
 - Active tab effect.
 - Striped menu.
 
-%description -l pl -n kde-style-%{_name}
+%description -n kde-style-%{_name} -l pl
 thinkeramik to zmodyfikowany keramik z nastêpuj±cymi zmianami:
 - P³askie paski menu i narzêdzi
 - Inny kolor suwaka - nieakktywnego t³a
@@ -78,12 +81,12 @@ Styl dekoracji okien dla KDE - thinkeramik.
 %prep
 %setup -q -n %{_name}-%{version}
 %patch0 -p1
-cp /usr/share/automake/config.sub admin
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 kde_icondir="%{_iconsdir}"; export kde_icondir
 export UNSERMAKE=/usr/share/unsermake/unsermake
+cp -f /usr/share/automake/config.sub admin
 %{__make} -f Makefile.cvs
 %configure
 %{__make}
@@ -93,8 +96,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %files -n kde-style-%{_name}
 %defattr(644,root,root,755)
