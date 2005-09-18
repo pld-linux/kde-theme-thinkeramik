@@ -5,7 +5,7 @@ Summary:	KDE style - thinkeramik
 Summary(pl):	Styl do KDE - thinkeramik
 Name:		kde-theme-%{_name}
 Version:	3.2.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Themes
 Source0:	http://prefsx1.hp.infoseek.co.jp/tk040429/%{_name}-%{version}.tar.gz
@@ -17,11 +17,13 @@ BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	kdelibs-devel >= 3.1.2
 BuildRequires:	unsermake
-Requires:	kdelibs >= 3.1.2
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Requires:	kde-style-%{_name}
+Requires:	kde-colorscheme-%{_name}
+Requires:	kde-decoration-%{_name}
 Obsoletes:	kde-style-thin_keramik
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%description 
+%description
 thinkeramik is a KDE style based on Keramik.
 
 %description -l pl
@@ -111,6 +113,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir="%{_kdedocdir}"
+
+%files
 
 %files -n kde-style-%{_name}
 %defattr(644,root,root,755)
