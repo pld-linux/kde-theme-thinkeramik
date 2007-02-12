@@ -2,7 +2,7 @@
 %define		_name	thinkeramik
 
 Summary:	KDE style - thinkeramik
-Summary(pl):	Styl do KDE - thinkeramik
+Summary(pl.UTF-8):   Styl do KDE - thinkeramik
 Name:		kde-theme-%{_name}
 Version:	3.2.1
 Release:	3
@@ -26,12 +26,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 thinkeramik is a KDE style based on Keramik.
 
-%description -l pl
+%description -l pl.UTF-8
 thinkeramik to styl KDE oparty na Keramiku.
 
 %package -n kde-style-%{_name}
 Summary:	KDE style - %{_name}
-Summary(pl):	Styl do KDE - %{_name}
+Summary(pl.UTF-8):   Styl do KDE - %{_name}
 Group:		Themes
 Requires:	kdelibs
 
@@ -46,19 +46,19 @@ thinkeramik is modified from keramik as follows:
 - Active tab effect.
 - Striped menu.
 
-%description -n kde-style-%{_name} -l pl
-thinkeramik to zmodyfikowany keramik z nastêpuj±cymi zmianami:
-- P³askie paski menu i narzêdzi
-- Inny kolor suwaka - nieaktywnego t³a
+%description -n kde-style-%{_name} -l pl.UTF-8
+thinkeramik to zmodyfikowany keramik z nastÄ™pujÄ…cymi zmianami:
+- PÅ‚askie paski menu i narzÄ™dzi
+- Inny kolor suwaka - nieaktywnego tÅ‚a
 - Cienkie przyciski i suwak
 - Efekt dla zaznaczonej i aktywnej pozycji w pasku menu
-- Ikonki na zak³adkach
-- Efekt aktywnej zak³adki
+- Ikonki na zakÅ‚adkach
+- Efekt aktywnej zakÅ‚adki
 - Paskowane menu
 
 %package -n kde-colorscheme-%{_name}
 Summary:	Color scheme for KDE style - thinkeramik
-Summary(pl):	Schemat kolorów do stylu KDE - thinkeramik
+Summary(pl.UTF-8):   Schemat kolorÃ³w do stylu KDE - thinkeramik
 Group:		Themes
 Requires:	kdelibs
 
@@ -68,15 +68,15 @@ has a subdued green look and the second is an interesting
 yet a little eccentric green/orange/blue mix.
 
 
-%description -n kde-colorscheme-%{_name} -l pl
-Schematy kolorów do stylu KDE - thinkeramik. Jeden z nich
-ma stonowany, zielony wygl±d; a drugi jest interesuj±cym,
-acz trochê ekstrawaganckim po³±czeniem kolorów: 
-zielonego, pomarañczowego i niebieskiego.
+%description -n kde-colorscheme-%{_name} -l pl.UTF-8
+Schematy kolorÃ³w do stylu KDE - thinkeramik. Jeden z nich
+ma stonowany, zielony wyglÄ…d; a drugi jest interesujÄ…cym,
+acz trochÄ™ ekstrawaganckim poÅ‚Ä…czeniem kolorÃ³w: 
+zielonego, pomaraÅ„czowego i niebieskiego.
 
 %package -n kde-decoration-%{_name}
 Summary:	Kwin decoration - thinkeramik
-Summary(pl):	Dekoracja kwin - thinkeramik
+Summary(pl.UTF-8):   Dekoracja kwin - thinkeramik
 Group:		Themes
 Requires:	kdebase-desktop
 
@@ -86,11 +86,11 @@ It is similar to the keramik decoration, it differs by:
 - having flattened buttons
 - extended customizability (like the buttons' shape)
 
-%description -n kde-decoration-%{_name} -l pl
-Dekoracja okien, która pasuje do stylu KDE - thinkeramika.
-Jest podobna do dekoracji keramika z wyj±tkiem:
-- sp³aszczonych przycisków
-- zwiêkszonej dostosowywalno¶ci (np. kszta³tu przycisków)
+%description -n kde-decoration-%{_name} -l pl.UTF-8
+Dekoracja okien, ktÃ³ra pasuje do stylu KDE - thinkeramika.
+Jest podobna do dekoracji keramika z wyjÄ…tkiem:
+- spÅ‚aszczonych przyciskÃ³w
+- zwiÄ™kszonej dostosowywalnoÅ›ci (np. ksztaÅ‚tu przyciskÃ³w)
 
 %prep
 %setup -q -n %{_name}-%{version}
