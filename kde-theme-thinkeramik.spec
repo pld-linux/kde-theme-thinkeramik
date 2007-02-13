@@ -2,7 +2,7 @@
 %define		_name	thinkeramik
 
 Summary:	KDE style - thinkeramik
-Summary(pl.UTF-8):   Styl do KDE - thinkeramik
+Summary(pl.UTF-8):	Styl do KDE - thinkeramik
 Name:		kde-theme-%{_name}
 Version:	3.2.1
 Release:	3
@@ -31,7 +31,7 @@ thinkeramik to styl KDE oparty na Keramiku.
 
 %package -n kde-style-%{_name}
 Summary:	KDE style - %{_name}
-Summary(pl.UTF-8):   Styl do KDE - %{_name}
+Summary(pl.UTF-8):	Styl do KDE - %{_name}
 Group:		Themes
 Requires:	kdelibs
 
@@ -58,7 +58,7 @@ thinkeramik to zmodyfikowany keramik z następującymi zmianami:
 
 %package -n kde-colorscheme-%{_name}
 Summary:	Color scheme for KDE style - thinkeramik
-Summary(pl.UTF-8):   Schemat kolorów do stylu KDE - thinkeramik
+Summary(pl.UTF-8):	Schemat kolorów do stylu KDE - thinkeramik
 Group:		Themes
 Requires:	kdelibs
 
@@ -76,7 +76,7 @@ zielonego, pomarańczowego i niebieskiego.
 
 %package -n kde-decoration-%{_name}
 Summary:	Kwin decoration - thinkeramik
-Summary(pl.UTF-8):   Dekoracja kwin - thinkeramik
+Summary(pl.UTF-8):	Dekoracja kwin - thinkeramik
 Group:		Themes
 Requires:	kdebase-desktop
 
